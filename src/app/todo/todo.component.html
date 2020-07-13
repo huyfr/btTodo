@@ -1,0 +1,31 @@
+<table class="ui celled table">
+  <thead>
+  <tr>
+    <th>No.</th>
+    <th>Content</th>
+    <th colspan="2" class="center aligned">Option</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let todo of todoList; index as i">
+    <td hidden>{{todo.id}}</td>
+    <td>{{i + 1}}</td>
+    <td>{{todo.content}}</td>
+    <td class="right aligned">
+      <a class="ui primary button" [routerLink]="['/todo', 'edit', todo.id]">Edit</a>
+    </td>
+    <td class="right aligned">
+      <a class="ui red button right aligned" [routerLink]="['/todo', 'delete', todo.id]">Delete</a>
+    </td>
+  </tr>
+  </tbody>
+  <tfoot class="full-width">
+  <tr>
+    <th colspan="5">
+      <div class="ui right floated small primary labeled icon button">
+        <i class="plus square icon" routerLink="/todo/show_create"></i><a routerLink="/todo/show_create" style="color: white">Add</a>
+      </div>
+    </th>
+  </tr>
+  </tfoot>
+</table>

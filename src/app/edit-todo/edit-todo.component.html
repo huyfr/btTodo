@@ -1,0 +1,11 @@
+<form class="ui form" [formGroup]="editForm" (ngSubmit)="onSubmit()">
+  <div class="field">
+    <label>Content</label>
+    <input type="text" formControlName="content">
+    <div class="ui pointing red basic label" *ngIf="submitted && rfc.content.errors">
+      <div *ngIf="rfc.content.errors.required">Không được để trống tiêu đề</div>
+    </div>
+  </div>
+  <button class="ui primary button" type="submit">Submit</button>
+  <button class="ui button" type="reset" (click)="onReset()">Reset</button>
+</form>
